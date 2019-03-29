@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1= title
+
+    p #[strong Summary:] Karatsuba's Algorithm
+
+    div(style='margin-left:20px;margin-top:20px')
+        h4 Calculator
+
+    form(method='POST' action='')
+        div.form-group
+            label(for='a') Integer a:
+            input#a.form-control(type='text' placeholder='12345' name='a' value=(undefined===a ? '' : a))
+        div.form-group
+            label(for='b') Integer b:
+            input#b.form-control(type='text' placeholder='54321' name='b' value=(undefined===b ? '' : b))
+        button.btn.btn-primary(type='submit') Calculate
+
+    if errors
+        ul
+            for error in errors
+                li!= error.msg

@@ -1,12 +1,15 @@
 // karatsuba.js - Karatsuba's Alg route module
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// Home page route
-router.get('/', function(req, res) {
-    res.send('Karatsuba\'s Algorithm');
-});
+const karatsuba_controller = require('../controllers/karatsubaController');
+
+// Karatsuba calc home page route
+router.get('/', karatsuba_controller.index);
+
+// Karatsuba calc post route
+router.post('/', karatsuba_controller.karatsuba_post);
 
 // Efficiency analysis & details route
 router.get('/details', function (req, res) {
