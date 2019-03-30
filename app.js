@@ -1,15 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+'use strict';
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const {Docker} = require('node-docker-api');
+const docker = new Docker({ socketPath: '/var/run/docker.sock'});
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var algorithmRouter = require('./routes/algorithms');
-var karatsubaRouter = require('./routes/karatsuba');
-var app = express();
-
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const algorithmRouter = require('./routes/algorithms');
+const karatsubaRouter = require('./routes/karatsuba');
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
