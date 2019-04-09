@@ -16,13 +16,12 @@ from math import ceil
 
 class Karatsuba:
 
-    def __init__(self):
-        self.length = 5
+    def __init__(self, ln):
+        self.length = ln
 
     @staticmethod
     def break_down_num(n):
-        length = len(n)
-        n_ceil = ceil(length/2)
+        n_ceil = ceil(len(n)/2)
 
         n1 = n[:n_ceil]
         n2 = n[n_ceil:]
@@ -67,6 +66,8 @@ class Karatsuba:
 if __name__ == "__main__":
     a = sys.argv[1]
     b = sys.argv[2]
+    length = sys.argv[3]
 
-    obj = Karatsuba()
-    obj.start(a, b)
+    obj = Karatsuba(length)
+    print("final answer: " + str(obj.start(a, b)))
+
