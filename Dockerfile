@@ -1,7 +1,7 @@
 # Remember to check ip!!
 # docker-machine ip
 # ip:<chosen_machine_port>
-FROM node:8
+FROM node:10-alpine
 
 # Directory
 WORKDIR /usr/src/app
