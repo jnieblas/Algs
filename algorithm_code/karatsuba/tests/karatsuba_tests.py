@@ -1,5 +1,5 @@
 import unittest
-from algorithm_code.src.karatsuba import Karatsuba
+from algorithm_code.karatsuba.src.karatsuba import Karatsuba
 
 
 class KaratsubaTest(unittest.TestCase):

@@ -66,7 +66,10 @@ class Karatsuba:
 if __name__ == "__main__":
     a = sys.argv[1]
     b = sys.argv[2]
-    length = sys.argv[3]
+    if a > b:
+        length = str(a).__len__()
+    else:
+        length = str(b).__len__()
 
     obj = Karatsuba(length)
     print("final answer: " + str(obj.start(a, b)))
