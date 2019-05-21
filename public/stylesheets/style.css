@@ -1,5 +1,5 @@
 body {
-  font-family: "Times New Roman", Arial,sans-serif;
+  font-family: "Microsoft JhengHei", Arial, sans-serif;
   background: ghostwhite;
   font-size: 16px;
   line-height: 1.5;
@@ -9,15 +9,14 @@ body {
 }
 
 h1 {
-  font: 30px "fantasy";
-  background: rgba(0, 0, 0, 0.84);
-  color: beige;
+  font: 30px "Microsoft JhengHei";
+  color: black;
   text-transform: uppercase;
   text-align: center;
 }
 
 h3 {
-  font: 20px "fantasy";
+  font: 20px "Microsoft JhengHei";
   color: #565254;
   text-transform: uppercase;
 }
