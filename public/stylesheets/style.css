@@ -1,5 +1,50 @@
-.sidebar-nav {
-  margin-top: 20px;
+body {
+  font-family: "Microsoft JhengHei", Arial, sans-serif;
+  background: ghostwhite;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+  font-weight: 300;
   padding: 0;
-  list-style: none;
+}
+
+h1 {
+  font: 30px "Microsoft JhengHei";
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h3 {
+  font: 20px "Microsoft JhengHei";
+  color: #565254;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.84);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  font: 16px "Microsoft JhengHei";
+  display: block;
+  color: beige;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
