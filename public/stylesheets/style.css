@@ -29,8 +29,17 @@ ul {
   background-color: rgba(0, 0, 0, 0.84);
 }
 
+ul.a {
+  background-color: ghostwhite;
+}
+
 li {
   float: left;
+}
+
+li.a {
+  color: red;
+  list-style-type: circle;
 }
 
 li a {
@@ -52,6 +61,9 @@ li a.active{
     text-decoration: none;
 }
 
+.error{
+  color: beige;
+}
 .center {
   text-align: center;
   margin: auto;
