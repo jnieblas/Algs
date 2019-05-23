@@ -6,7 +6,6 @@ exports.index = function(req, res, next){
 };
 
 exports.karatsuba_post = [
-
     // Custom validations, preventing unnecessary messages
     body('a').trim().custom(value => {
         var a = Number(value);

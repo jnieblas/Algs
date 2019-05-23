@@ -8,8 +8,7 @@ const {Docker} = require('node-docker-api');
 const docker = new Docker({ socketPath: '/var/run/docker.sock'});
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const algorithmRouter = require('./routes/algorithms');
+const calculatorsRouter = require('./routes/calculators');
 const karatsubaRouter = require('./routes/karatsuba');
 const app = express();
 
@@ -24,9 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/algorithms', algorithmRouter);
-app.use('/algorithms/karatsuba', karatsubaRouter);
+app.use('/calculators', calculatorsRouter);
+app.use('/calculators/karatsuba', karatsubaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
