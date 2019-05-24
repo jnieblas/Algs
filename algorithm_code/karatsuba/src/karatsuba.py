@@ -59,7 +59,6 @@ class Karatsuba:
         a1, a2 = self.break_down_num(a)
         b1, b2 = self.break_down_num(b)
         answer = self.compute_karatsuba(a1, a2, b1, b2)
-        print(answer)
         return answer
 
 
@@ -73,5 +72,5 @@ if __name__ == "__main__":
 
     obj = Karatsuba(length)
     ans = str(obj.start(a, b))
-    print("ans" + ans)
+    print(ans)
     sys.stdout.flush()
