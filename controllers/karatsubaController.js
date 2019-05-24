@@ -1,6 +1,8 @@
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
+const spawn = require("child_process").spawn;
+
 exports.index = function(req, res, next){
     res.render('karatsuba_form', { title: 'Karatsuba Calculator'});
 };
@@ -41,19 +43,23 @@ exports.karatsuba_post = [
         // Extract the validation errors from a request.
         const errors = validationResult(req);
 
+        const a = req.body.a;
+        const b = req.body.b;
 
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values/error messages.
             res.render('karatsuba_form', { title: 'Karatsuba Calculator',
-                a: req.body.a, b: req.body.b, errors: errors.array()});
+                a: a, b: b, errors: errors.array()});
         }
         else {
-            // Filler for now
-            res.render('karatsuba_form', { title: 'Karatsuba Calculator'});
-            // Data from form is valid.
-            // Send a & b to Python Container
-            // render form with descriptions
-            // res.redirect(//new url);
+
+            // get the result, pass to stdout
+            const karatsuba = spawn('python',["C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
+            "algorithm_code/karatsuba/src/karatsuba.py", a, b]);
+            karatsuba.stdout.on('data', (data) => {
+                res.render('karatsuba_result', { title: 'Result',
+                    a: a, b, out: data});
+            });
         }
     }
 ];

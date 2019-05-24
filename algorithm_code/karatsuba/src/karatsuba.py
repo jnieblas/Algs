@@ -72,5 +72,6 @@ if __name__ == "__main__":
         length = str(b).__len__()
 
     obj = Karatsuba(length)
-    print("final answer: " + str(obj.start(a, b)))
-
+    ans = str(obj.start(a, b))
+    print("ans" + ans)
+    sys.stdout.flush()

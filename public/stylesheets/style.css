@@ -31,6 +31,7 @@ ul {
 
 ul.a {
   background-color: ghostwhite;
+  list-style-type: square;
 }
 
 li {
