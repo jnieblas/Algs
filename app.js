@@ -4,13 +4,9 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const {Docker} = require('node-docker-api');
-const docker = new Docker({ socketPath: '/var/run/docker.sock'});
+const sass = require('node-sass-middleware');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const algorithmRouter = require('./routes/algorithms');
-const karatsubaRouter = require('./routes/karatsuba');
 const app = express();
 
 // view engine setup
@@ -23,10 +19,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(
+  sass({
+    src: path.join(__dirname, '/public/scss/'),
+    dest: path.join(__dirname, '/public/'),
+    debug: true,
+  }),
+  express.static(path.join(__dirname, 'public')));
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/algorithms', algorithmRouter);
-app.use('/algorithms/karatsuba', karatsubaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

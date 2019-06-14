@@ -1,6 +1,11 @@
 extends layout
 
 block content
-  h1= ""
-  p Welcome to Algs: a collection of Algorithm calculators along with steps describing their processes.
-  p #[span Checkout the GitHub for Algs] #[a(href='https://github.com/jonnieblas/algs.git') here!]
+  div(class="details")
+    h1= Welcome
+    p
+    | Welcome to Algs: a collection of Algorithm calculators
+    | along with steps describing their processes.
+    p
+    | Checkout the GitHub for Algs
+    | #[a(href='https://github.com/jonnieblas/algs.git', target="blank") here]!

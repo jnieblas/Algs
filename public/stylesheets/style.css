@@ -1,50 +1,60 @@
+/* Site Theme Colors*/
 body {
-  font-family: "Microsoft JhengHei", Arial, sans-serif;
-  background: ghostwhite;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgb(0, 0, 0);
-  font-weight: 300;
-  padding: 0;
-}
-
-h1 {
-  font: 30px "Microsoft JhengHei";
-  color: black;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-h3 {
-  font: 20px "Microsoft JhengHei";
-  color: #565254;
-  text-transform: uppercase;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.84);
-}
-
-li {
-  float: left;
-}
-
-li a {
-  font: 16px "Microsoft JhengHei";
-  display: block;
-  color: beige;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.center {
-  text-align: center;
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
+  font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;
+  background: #08192D;
+  color: #FFFFFB;
+  font-size: 16px; }
+  body #navbar-parent {
+    position: relative;
+    font-size: 35px;
+    float: left;
+    text-decoration: none;
+    color: #FFFFFB;
+    top: 0;
+    left: 0;
+    /*
+     * Help with nav transitions from:
+     * https://codepen.io/shshaw/pen/gsFch
+     */ }
+    body #navbar-parent .sub-menu-parent {
+      background-color: #08192D; }
+      body #navbar-parent .sub-menu-parent:focus .sub-menu,
+      body #navbar-parent .sub-menu-parent:focus-within .sub-menu,
+      body #navbar-parent .sub-menu-parent:hover .sub-menu {
+        visibility: visible;
+        /* shows sub-menu */
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+        /* this removes the transition delay so the menu will be visible while the other styles transition */ }
+      body #navbar-parent .sub-menu-parent .sub-menu {
+        visibility: hidden;
+        /* hides sub-menu */
+        opacity: 0;
+        position: absolute;
+        font-size: 25px;
+        top: 100%;
+        left: 0;
+        transform: translateY(-2em);
+        z-index: -1;
+        transition: all 0.2s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
+    body #navbar-parent a {
+      display: block;
+      background-color: #08192D;
+      color: #FFFFFB;
+      text-decoration: none;
+      padding: 14px 16px; }
+      body #navbar-parent a:hover {
+        color: #D0104C;
+        transition: 0.3s; }
+  body .details {
+    text-align: center;
+    padding-top: 80px;
+    width: 720px;
+    margin: auto;
+    display: block;
+    overflow: hidden; }
+    body .details a {
+      color: #D0104C;
+      text-decoration: none; }
