@@ -2,6 +2,7 @@
 $primary: #08192D;
 $secondary: #FFFFFB;
 $tertiary: #D0104C;
+$quaternary: #00d943;
 
 body {
   font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;;
@@ -71,7 +72,6 @@ body {
 
   .details {
       text-align: center;
-      padding-top: 80px;
       width: 500px;
       margin: auto;
       display: block;
@@ -86,6 +86,33 @@ body {
         padding-top: 30px;
         padding-bottom: 30px;
         border: solid;
+
+        div.form-group {
+          input {
+            background-color: $secondary;
+            border: none;
+          }
+        }
+
+        button {
+          background: $primary;
+          color: $secondary;
+          border: solid $secondary 1px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+
+          &:hover {
+            cursor: pointer;
+            color: $quaternary;
+            border-color: $quaternary;
+            transition: 0.3s;
+         }
       }
+    }
+
+    /* Error Color */
+    ul.a {
+      color: $tertiary;
+    }
   }
 }

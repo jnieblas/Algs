@@ -22,10 +22,6 @@ body {
     body #navbar-parent .sub-menu-parent {
       background-color: #08192D;
       width: 25%; }
-      body #navbar-parent .sub-menu-parent #n {
-        display: inline-block;
-        float: left;
-        width: 25%; }
       body #navbar-parent .sub-menu-parent:focus .sub-menu,
       body #navbar-parent .sub-menu-parent:focus-within .sub-menu,
       body #navbar-parent .sub-menu-parent:hover .sub-menu {
@@ -59,11 +55,11 @@ body {
         transition: 0.3s; }
   body .details {
     text-align: center;
-    padding-top: 80px;
     width: 500px;
     margin: auto;
     display: block;
-    overflow: hidden; }
+    overflow: hidden;
+    /* Error Color */ }
     body .details a {
       color: #D0104C;
       text-decoration: none; }
@@ -71,3 +67,19 @@ body {
       padding-top: 30px;
       padding-bottom: 30px;
       border: solid; }
+      body .details form div.form-group input {
+        background-color: #FFFFFB;
+        border: none; }
+      body .details form button {
+        background: #08192D;
+        color: #FFFFFB;
+        border: solid #FFFFFB 1px;
+        padding-top: 5px;
+        padding-bottom: 5px; }
+        body .details form button:hover {
+          cursor: pointer;
+          color: #00d943;
+          border-color: #00d943;
+          transition: 0.3s; }
+    body .details ul.a {
+      color: #D0104C; }
