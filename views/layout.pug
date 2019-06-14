@@ -1,25 +1,15 @@
 doctype html
 html(lang='en')
-  block navbar
-    ul(class='reveal')
-      li
-        a(href='/') Algs
-      li
-        a(href='/Calculators') Calculators
-      li
-        a(href='') About
   head
     title= title
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    div(class='container-fluid')
-      div(class='row')
-        div(class='center')
-
-          div(class='col-sm-10')
-            block content
+    div(id="navbar-parent")
+      div(class="sub-menu-parent")
+        a(href="/", class="navlink") ア
+        div(class="sub-menu")
+          div(id="karatsuba-nav", class="nav-item")
+            a(href="/karatsuba", class="navlink") KARATSUBA
+          div(id="dynamic-nav", class="nav-item")
+            a(href="/dynamic", class="navlink") DYNAMIC
+    block content

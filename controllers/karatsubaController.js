@@ -2,7 +2,7 @@ const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
 exports.index = function(req, res, next){
-    res.render('karatsuba_form', { title: 'Karatsuba Calculator'});
+    res.render('karatsuba_form', { title: 'ア - KARATSUBA'});
 };
 
 exports.karatsuba_post = [
