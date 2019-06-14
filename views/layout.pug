@@ -1,15 +1,15 @@
 doctype html
 html(lang='en')
-  block navbar
-    div(id="navbar-parent")
-      div(id="algs-icon")
-        a(href="/") あ
-      div(id="karatsuba-nav")
-        a(href="/karatsuba") KARATSUBA
-      div(id="dynamic-nav")
-        a(href="/dynamic") DYNAMIC
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    div(id="navbar-parent")
+      div(class="sub-menu-parent")
+        a(href="/", class="navlink") ア
+        div(class="sub-menu")
+          div(id="karatsuba-nav", class="nav-item")
+            a(href="/karatsuba", class="navlink") KARATSUBA
+          div(id="dynamic-nav", class="nav-item")
+            a(href="/dynamic", class="navlink") DYNAMIC
     block content
