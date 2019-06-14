@@ -4,7 +4,7 @@ const { sanitizeBody } = require('express-validator/filter');
 const spawn = require("child_process").spawn;
 
 exports.index = function(req, res, next){
-    res.render('karatsuba_form', { title: 'Karatsuba Calculator'});
+    res.render('karatsuba_form', { title: 'ア - KARATSUBA'});
 };
 
 exports.karatsuba_post = [
