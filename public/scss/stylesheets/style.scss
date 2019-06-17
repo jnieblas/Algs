@@ -2,21 +2,25 @@
 $primary: #08192D;
 $secondary: #FFFFFB;
 $tertiary: #D0104C;
+$quaternary: #00d943;
 
 body {
   font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;;
   background: $primary;
   color: $secondary;
   font-size: 16px;
+  padding-top: 0px;
+  width: 100%;
 
   #navbar-parent {
-    position: relative;
+    position: sticky;
     font-size: 35px;
     float: left;
     text-decoration: none;
     color: $secondary;
     top: 0;
     left: 0;
+    width: 100%;
 
     /*
      * Help with nav transitions from:
@@ -24,6 +28,7 @@ body {
      */
     .sub-menu-parent {
       background-color: $primary;
+      width: 25%;
 
       &:focus .sub-menu,
       &:focus-within .sub-menu,
@@ -43,6 +48,7 @@ body {
         top: 100%;
         left: 0;
         transform: translateY(-2em);
+        width: 25%;
         z-index: -1;
         transition: all 0.2s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
 
@@ -61,18 +67,52 @@ body {
         transition: 0.3s;
       }
     }
+
   }
 
   .details {
       text-align: center;
-      padding-top: 80px;
-      width: 720px;
+      width: 500px;
       margin: auto;
       display: block;
       overflow: hidden;
+
       a {
         color: $tertiary;
         text-decoration: none;
       }
+
+      form {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border: solid;
+
+        div.form-group {
+          input {
+            background-color: $secondary;
+            border: none;
+          }
+        }
+
+        button {
+          background: $primary;
+          color: $secondary;
+          border: solid $secondary 1px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+
+          &:hover {
+            cursor: pointer;
+            color: $quaternary;
+            border-color: $quaternary;
+            transition: 0.3s;
+         }
+      }
+    }
+
+    /* Error Color */
+    ul.a {
+      color: $tertiary;
+    }
   }
 }

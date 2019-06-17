@@ -7,6 +7,7 @@ const logger = require('morgan');
 const sass = require('node-sass-middleware');
 
 const indexRouter = require('./routes/index');
+const karatsubaRouter = require('./routes/karatsuba');
 const app = express();
 
 // view engine setup
@@ -28,6 +29,7 @@ app.use(
   express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/karatsuba', karatsubaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

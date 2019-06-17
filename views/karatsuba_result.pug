@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class="details")
+    h1= title
+    - var intA = a;
+    - var intB = b;
+    - var output = out;
+    p #[strong a = ] #{intA}
+    p #[strong b = ] #{intB}
+    p #[strong answer = ] #{output}

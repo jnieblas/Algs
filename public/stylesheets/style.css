@@ -3,21 +3,25 @@ body {
   font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;
   background: #08192D;
   color: #FFFFFB;
-  font-size: 16px; }
+  font-size: 16px;
+  padding-top: 0px;
+  width: 100%; }
   body #navbar-parent {
-    position: relative;
+    position: sticky;
     font-size: 35px;
     float: left;
     text-decoration: none;
     color: #FFFFFB;
     top: 0;
     left: 0;
+    width: 100%;
     /*
      * Help with nav transitions from:
      * https://codepen.io/shshaw/pen/gsFch
      */ }
     body #navbar-parent .sub-menu-parent {
-      background-color: #08192D; }
+      background-color: #08192D;
+      width: 25%; }
       body #navbar-parent .sub-menu-parent:focus .sub-menu,
       body #navbar-parent .sub-menu-parent:focus-within .sub-menu,
       body #navbar-parent .sub-menu-parent:hover .sub-menu {
@@ -37,6 +41,7 @@ body {
         top: 100%;
         left: 0;
         transform: translateY(-2em);
+        width: 25%;
         z-index: -1;
         transition: all 0.2s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s; }
     body #navbar-parent a {
@@ -50,11 +55,31 @@ body {
         transition: 0.3s; }
   body .details {
     text-align: center;
-    padding-top: 80px;
-    width: 720px;
+    width: 500px;
     margin: auto;
     display: block;
-    overflow: hidden; }
+    overflow: hidden;
+    /* Error Color */ }
     body .details a {
       color: #D0104C;
       text-decoration: none; }
+    body .details form {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      border: solid; }
+      body .details form div.form-group input {
+        background-color: #FFFFFB;
+        border: none; }
+      body .details form button {
+        background: #08192D;
+        color: #FFFFFB;
+        border: solid #FFFFFB 1px;
+        padding-top: 5px;
+        padding-bottom: 5px; }
+        body .details form button:hover {
+          cursor: pointer;
+          color: #00d943;
+          border-color: #00d943;
+          transition: 0.3s; }
+    body .details ul.a {
+      color: #D0104C; }
