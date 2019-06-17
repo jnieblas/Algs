@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div(class="details")
+    h1= title
+    - var sA = a;
+    - var sB = b;
+    - var output = out;
+    p #[strong a = ] #{sA}
+    p #[strong b = ] #{sB}
+    p #[strong answer = ] #{output}
