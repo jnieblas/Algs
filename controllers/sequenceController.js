@@ -48,12 +48,50 @@ exports.sequence_post = [
       }
       else {
           // get the result, pass to stdout
-          const sequence = spawn('java',["C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
-          "algorithm_code/sequence/src/Driver", a, b]);
-          sequence.stdout.on('data', (data) => {
-              res.render('sequence_result', { title: 'ア - SEQUENCE RESULT',
-                  a: a, b, out: data});
+          // const sequence = spawn('java',["Driver", a, b], {cwd: "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
+          // "algorithm_code/sequence/src/"});
+          // sequence.stdout.on('data', (data) => {
+          //     res.render('sequence_result', { title: 'ア - SEQUENCE RESULT',
+          //         a: a, b, out: data});
+          // });
+          run_script('java', ["Driver", a, b],
+          "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
+          "algorithm_code/sequence/src/",
+          function(output, exit_code) {
+              res.render('sequence_result',{ title: 'ア - SEQUENCE RESULT',
+                      a: a, b, out: output});
           });
-      }
+        }
     }
 ];
+
+// asynchronously runs the script
+// Help from:
+//  https://stackoverflow.com/questions/14332721/node-js-spawn-child-process-and-get-terminal-output-live
+function run_script(command, args, dir, callback) {
+  console.log("Starting Process.");
+  var child = spawn(command, args, {cwd: dir});
+
+  var out = "";
+
+  child.stdout.setEncoding('utf8');
+  child.stdout.on('data', function(data){
+    console.log('stdout: ' + data);
+
+    data=data.toString();
+    out+=data;
+  });
+
+  child.stderr.setEncoding('utf8');
+  child.stderr.on('data', function(data) {
+    console.log('stderr: ' + data);
+
+    data=data.toString();
+    scriptOutput+=data;
+  });
+
+  // returns output & status as a callback
+  child.on('close', function(code) {
+    callback(out, code);
+  });
+}
