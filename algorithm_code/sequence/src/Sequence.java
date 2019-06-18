@@ -18,6 +18,7 @@ public class Sequence {
     private static final char XCHAR = 'x';
     private static final char YCHAR = 'y';
     private static final char NONECHAR = 'n';
+    private static int score;
 
     // holds our best XY vals for testing
     private static String[] bestXY = new String[2];
@@ -36,7 +37,7 @@ public class Sequence {
         String yBest = "";
         char sp = '_';
 
-        System.out.println("\nSteps to build our optimal x and y:");
+        System.out.println("\n\nSteps to build our optimal x and y:");
         while(i != 0 || j != 0){
             Score s = alignedTable[i][j];
             char choice = s.getChoice();
@@ -83,6 +84,7 @@ public class Sequence {
         }
         bestXY[0] = xBest;
         bestXY[1] = yBest;
+        score = alignedTable[m][n].getPoints();
     }
 
     // Inserts base case values into the table
@@ -144,7 +146,7 @@ public class Sequence {
         int yIndex = 0;
 
         // Print table info:
-        System.out.println("\nTable of each score's " +
+        System.out.println("\r\nTable of each score's " +
                 "total points and optimal choice.");
         System.out.println(String.format("%30s",
                 "x = place dash in string x"));
@@ -163,9 +165,9 @@ public class Sequence {
         // Print individual cell values. Left to right, top to bottom
         for(int j = 0; j <= n; j++){
             if(j == 0){ // Print initial dash
-                System.out.print(String.format("\n%-2c ", '-'));
+                System.out.print(String.format("\r\n%-2c ", '-'));
             } else { // Print y-axis value
-                System.out.print(String.format("\n%-2c ",
+                System.out.print(String.format("\r\n%-2c ",
                         y.charAt(yIndex)));
                 yIndex++;
             }
@@ -184,7 +186,7 @@ public class Sequence {
     // print the bottoms lines of the table's rows
     private static void printRowLines(int m){
         int totSpaces = (m + 1) * 8 + 1;
-        System.out.print("\n");
+        System.out.print("\r\n");
         for(int i = 0; i <= totSpaces; i++){
             System.out.print("-");
         }
@@ -192,8 +194,9 @@ public class Sequence {
 
     // Prints the best string for x and y
     private static void printBestStrings(){
-        System.out.println("\nFinal x: " + bestXY[0]);
+        System.out.println("\r\n\r\nFinal x: " + bestXY[0]);
         System.out.println("Final y: " + bestXY[1]);
+        System.out.println("Best Score: " + score);
     }
 
     public String getBestX(){

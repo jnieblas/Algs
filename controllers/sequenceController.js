@@ -47,13 +47,6 @@ exports.sequence_post = [
               a: a, b: b, errors: errors.array()});
       }
       else {
-          // get the result, pass to stdout
-          // const sequence = spawn('java',["Driver", a, b], {cwd: "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
-          // "algorithm_code/sequence/src/"});
-          // sequence.stdout.on('data', (data) => {
-          //     res.render('sequence_result', { title: 'ア - SEQUENCE RESULT',
-          //         a: a, b, out: data});
-          // });
           run_script('java', ["Driver", a, b],
           "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
           "algorithm_code/sequence/src/",
@@ -76,18 +69,20 @@ function run_script(command, args, dir, callback) {
 
   child.stdout.setEncoding('utf8');
   child.stdout.on('data', function(data){
-    console.log('stdout: ' + data);
+    // console.log('stdout: ' + data);
 
-    data=data.toString();
-    out+=data;
+    data = data.toString();
+    var lines = data.split(/(\r?\n)/g);
+    //console.log("lines: " + lines);
+    out += data;
   });
 
-  child.stderr.setEncoding('utf8');
+  // child.stderr.setEncoding('utf8');
   child.stderr.on('data', function(data) {
     console.log('stderr: ' + data);
 
-    data=data.toString();
-    scriptOutput+=data;
+    data = data.toString();
+    out += data;
   });
 
   // returns output & status as a callback

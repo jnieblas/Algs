@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  div(class="details")
+  div(id="sequence-details", class="details")
     h1 RESULT
     - var intA = a;
     - var intB = b;
     - var output = out;
     p #[strong a = ] #{intA}
     p #[strong b = ] #{intB}
-    p #[strong answer = ] #{output}
+    p #[strong ANSWER = ] #{output}
