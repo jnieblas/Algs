@@ -5,7 +5,7 @@ $tertiary: #D0104C;
 $quaternary: #00d943;
 
 body {
-  font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;;
+  font-family: "adobe-garamond-pro-1","adobe-garamond-pro-2",sans-serif;
   background: $primary;
   color: $secondary;
   font-size: 16px;
@@ -18,6 +18,7 @@ body {
     float: left;
     text-decoration: none;
     color: $secondary;
+    background-color: $primary;
     top: 0;
     left: 0;
     width: 100%;
@@ -114,5 +115,10 @@ body {
     ul.a {
       color: $tertiary;
     }
+  }
+
+  #sequence-result {
+    width: 100%;
+    font-size: 16px;
   }
 }
