@@ -67,7 +67,8 @@ body {
     body .details form {
       padding-top: 30px;
       padding-bottom: 30px;
-      border: solid; }
+      border: solid;
+      border-radius: 15px; }
       body .details form div.form-group input {
         background-color: #FFFFFB;
         border: none; }
@@ -75,6 +76,7 @@ body {
         background: #08192D;
         color: #FFFFFB;
         border: solid #FFFFFB 1px;
+        border-radius: 25px;
         padding-top: 5px;
         padding-bottom: 5px; }
         body .details form button:hover {
