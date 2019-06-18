@@ -9,6 +9,7 @@ const sass = require('node-sass-middleware');
 const indexRouter = require('./routes/index');
 const karatsubaRouter = require('./routes/karatsuba');
 const sequenceRouter = require('./routes/sequence');
+const branchBoundRouter = require('./routes/branchbound');
 const app = express();
 
 // view engine setup
@@ -32,6 +33,7 @@ app.use(
 app.use('/', indexRouter);
 app.use('/karatsuba', karatsubaRouter);
 app.use('/sequence', sequenceRouter);
+app.use('/branchbound', branchBoundRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
