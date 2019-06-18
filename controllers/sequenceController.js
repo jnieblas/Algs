@@ -4,7 +4,7 @@ const { sanitizeBody } = require('express-validator/filter');
 const spawn = require("child_process").spawn;
 
 exports.index = function(req, res, next){
-  res.render('sequence_form', { title: 'ア - SEQUENCE'});
+  res.render('sequence_form', { title: 'アルゴス - SEQUENCE'});
 };
 
 exports.sequence_post = [
@@ -43,7 +43,7 @@ exports.sequence_post = [
 
       if (!errors.isEmpty()) {
           // There are errors. Render form again with sanitized values/error messages.
-          res.render('sequence_form', { title: 'ア - SEQUENCE',
+          res.render('sequence_form', { title: 'アルゴス - SEQUENCE',
               a: a, b: b, errors: errors.array()});
       }
       else {
@@ -51,7 +51,7 @@ exports.sequence_post = [
           "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
           "algorithm_code/sequence/src/",
           function(output, exit_code) {
-              res.render('sequence_result',{ title: 'ア - SEQUENCE RESULT',
+              res.render('sequence_result',{ title: 'アルゴス - SEQUENCE RESULT',
                       a: a, b, out: output});
           });
         }

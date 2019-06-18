@@ -4,7 +4,7 @@ const { sanitizeBody } = require('express-validator/filter');
 const spawn = require("child_process").spawn;
 
 exports.index = function(req, res, next){
-    res.render('karatsuba_form', { title: 'ア - KARATSUBA'});
+    res.render('karatsuba_form', { title: 'アルゴス - KARATSUBA'});
 };
 
 exports.karatsuba_post = [
@@ -48,7 +48,7 @@ exports.karatsuba_post = [
 
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values/error messages.
-            res.render('karatsuba_form', { title: 'ア - KARATSUBA',
+            res.render('karatsuba_form', { title: 'アルゴス - KARATSUBA',
                 a: a, b: b, errors: errors.array()});
         }
         else {
@@ -57,7 +57,7 @@ exports.karatsuba_post = [
             const karatsuba = spawn('python',["C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
             "algorithm_code/karatsuba/src/karatsuba.py", a, b]);
             karatsuba.stdout.on('data', (data) => {
-                res.render('karatsuba_result', { title: 'ア - KARATSUBA RESULT',
+                res.render('karatsuba_result', { title: 'アルゴス - KARATSUBA RESULT',
                     a: a, b, out: data});
             });
         }
