@@ -1,0 +1,14 @@
+write a form that takes:
+target weight
+item & weight
+plus button that allows for more form input
+
+then:
+take each item & weight,
+add them to a data structure
+use this instead of a file
+
+first:
+look at old code, see how long it would take to convert it
+maybe just convert items to a list, pass the list (or hashmap maybe) and put it into a file
+otherwise, might be better to convert the code
