@@ -12,6 +12,7 @@ body {
     float: left;
     text-decoration: none;
     color: #FFFFFB;
+    background-color: #08192D;
     top: 0;
     left: 0;
     width: 100%;
@@ -83,3 +84,6 @@ body {
           transition: 0.3s; }
     body .details ul.a {
       color: #D0104C; }
+  body #sequence-result {
+    width: 100%;
+    font-size: 16px; }

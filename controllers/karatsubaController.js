@@ -48,7 +48,7 @@ exports.karatsuba_post = [
 
         if (!errors.isEmpty()) {
             // There are errors. Render form again with sanitized values/error messages.
-            res.render('karatsuba_form', { title: 'Karatsuba Calculator',
+            res.render('karatsuba_form', { title: 'ア - KARATSUBA',
                 a: a, b: b, errors: errors.array()});
         }
         else {
@@ -57,7 +57,7 @@ exports.karatsuba_post = [
             const karatsuba = spawn('python',["C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
             "algorithm_code/karatsuba/src/karatsuba.py", a, b]);
             karatsuba.stdout.on('data', (data) => {
-                res.render('karatsuba_result', { title: 'Result',
+                res.render('karatsuba_result', { title: 'ア - KARATSUBA RESULT',
                     a: a, b, out: data});
             });
         }

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  div(class="details")
+    h1= "SEQUENCE"
+    p
+    | A dynamic algorithm that aligns two given strings
+    | in the most efficient way possible.
+    p
+
+    form(method='POST' action='')
+      div.form-group
+        label(for='a') #{'String a '}
+        input#a.form-control(type='text' placeholder='AGGTAGDADT' name='a' value=(undefined===a ? '' : a))
+      br
+      div.form-group
+        label(for='b') #{'String b '}
+        input#b.form-control(type='text' placeholder='ADGGTAGADT' name='b' value=(undefined===b ? '' : b))
+      br
+      button.btn.btn-primary(type='submit') CALCULATE
+
+    if errors
+      ul.a
+        for error in errors
+          li.a!= error.msg
+          br
