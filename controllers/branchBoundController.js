@@ -1,7 +1,7 @@
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
-
 const spawn = require("child_process").spawn;
+const runScript = require('./runScript.mjs');
 
 exports.index = function(req, res, next){
   res.render('branch_bound_form', { title: 'アルゴス - BRANCH & BOUND'});
@@ -47,7 +47,7 @@ exports.branch_bound_post = [
               a: a, b: b, errors: errors.array()});
       }
       else {
-          run_script('java', ["Driver", a, b],
+          runScript.run_script('java', ["Driver", a, b],
           "C:/Users/Hugh Mungus/WebstormProjects/Algs/" +
           "algorithm_code/sequence/src/",
           function(output, exit_code) {
@@ -57,36 +57,3 @@ exports.branch_bound_post = [
         }
     }
 ];
-
-// asynchronously runs the script
-// Help from:
-//  https://stackoverflow.com/questions/14332721/node-js-spawn-child-process-and-get-terminal-output-live
-function run_script(command, args, dir, callback) {
-  console.log("Starting Process.");
-  var child = spawn(command, args, {cwd: dir});
-
-  var out = "";
-
-  child.stdout.setEncoding('utf8');
-  child.stdout.on('data', function(data){
-    // console.log('stdout: ' + data);
-
-    data = data.toString();
-    var lines = data.split(/(\r?\n)/g);
-    //console.log("lines: " + lines);
-    out += data;
-  });
-
-  // child.stderr.setEncoding('utf8');
-  child.stderr.on('data', function(data) {
-    console.log('stderr: ' + data);
-
-    data = data.toString();
-    out += data;
-  });
-
-  // returns output & status as a callback
-  child.on('close', function(code) {
-    callback(out, code);
-  });
-}
