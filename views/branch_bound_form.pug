@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  script(src="javascripts/addFields.js")
   div(class="details")
     h1= "BRANCH & BOUND"
     p
@@ -13,26 +14,14 @@ block content
         label(for='capacity') #{'Max Capacity: '}
         input#capacity.form-control(type='text' placeholder='15' name='capacity' value=(undefined===capacity ? '' : capacity))
       br
-
-      div.form-group(id="item1")
-        h3 Item 1
-        label(for='item1Profit') #{'Profit: '}
-        input#item1Profit.form-control(type='text' placeholder='10' name='item1Profit' value=(undefined===item1Profit ? '' : item1Profit))
-        br
-        label(for='item1Weight') #{'Weight: '}
-        input#item1Weight.form-control(type='text' placeholder='10' name='item1Weight' value=(undefined===item1Weight ? '' : item1Weight))
-
-      div.form-group(id="item2")
-        h3 Item 2
-        label(for='item2Profit') #{'Profit: '}
-        input#item2Profit.form-control(type='text' placeholder='10' name='item2Profit' value=(undefined===item2Profit ? '' : item2Profit))
-        br
-        label(for='item1Weight') #{'Weight: '}
-        input#item2Weight.form-control(type='text' placeholder='10' name='item2Weight' value=(undefined===item2Weight ? '' : item2Weight))
-
-
+      label(for='item') #{'Number of Items: '}
+      input#item.form-control(type='text' placeholder='4' name='item' value=(undefined===item ? '' : item))
+      br
+      a(href="#", id="filldetails", onclick="add_fields()") Add Items
+      div(id="item-container")
       br
       button.btn.btn-primary(type='submit') CALCULATE
+
     if errors
       ul.a
         for error in errors
